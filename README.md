@@ -37,10 +37,11 @@ Run the main notebook to process your image datasets:
 
 ## Example
 ### Input Image
-*Provide a sample image here.*
+*![F (10270)_0](https://github.com/user-attachments/assets/462df3a2-c12b-4402-b54f-a29c75123749)*
+
 
 ### Output Image
-*Provide a sample image here.*
+*![F (10270)](https://github.com/user-attachments/assets/1ffbacb5-7878-44b0-87fd-a1a708be4817)*
 
 ## Contribution
 Contributions are welcome! To contribute:
