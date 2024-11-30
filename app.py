@@ -2,12 +2,11 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-import streamlit as st
-import tensorflow as tf
 from tensorflow import keras
 from keras.layers import Input, Conv2D, MaxPooling2D, Conv2DTranspose, concatenate
 from keras.models import Model
 from keras.applications import VGG19
+from keras.models import load_model
 
 def build_unet_model(input_shape=(256, 256, 3)):
     inputs = Input(shape=input_shape)
@@ -74,7 +73,6 @@ def compute_gradients(y_true, y_pred):
     )
     return gradient_loss
 
-
 def combined_loss(y_true, y_pred):
     mse_loss = tf.reduce_mean(tf.square(y_true - y_pred))
     perceptual_loss = compute_perceptual(y_true, y_pred)
@@ -88,18 +86,14 @@ def preprocess_image(image, target_size=(256, 256)):
     image = np.array(image) / 255.0
     return image
 
-input_shape = (256, 256, 3)
-unet_model = build_unet_model(input_shape)
-
-learning_rate = 1e-5
-optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
-unet_model.compile(optimizer=optimizer, loss=combined_loss, metrics=['accuracy'])
-
-unet_model.load_weights("model/unet_model.h5")
+unet_model = load_model(
+    "model/unet_model.keras",
+    custom_objects={"combined_loss": combined_loss, "Model": build_unet_model},
+)
 
 st.title("Art Restoration")
 
-uploaded_file = st.file_uploader("Choose a file", type=["jpeg"])
+uploaded_file = st.file_uploader("Choose a file", type=["jpeg", "jpg"])
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     input_image = preprocess_image(image)
@@ -111,13 +105,13 @@ if uploaded_file is not None:
 
     col1, col2 = st.columns(2)
     with col1:
-        st.image(image, clamp=True, channels='RBG', caption="Uploaded Image", use_column_width=True)
+        st.image(image, clamp=True, channels='RGB', caption="Uploaded Image", use_column_width=True)
 
     with col2:
         st.image(
             predicted_image,
             clamp=True,
             caption="Predicted Image",
-            channels='RBG',
+            channels='RGB',
             use_column_width=True,
         )
