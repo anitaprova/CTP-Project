@@ -42,6 +42,8 @@ Run the main notebook to process your image datasets:
 ![d87a4a94-7333-4776-b401-693be0e3d7dc](https://github.com/user-attachments/assets/ebbef0f4-721d-4607-a226-b2a199b91f8d)
 ![f991b1d9-5175-4c28-9bb6-fdc9dcef2bd9](https://github.com/user-attachments/assets/dfb57283-1dca-4cce-bf75-2e744a81030f)
 
+## Demo
+[<img width="930" alt="Screen Shot 2024-11-30 at 7 50 43 PM" src="https://github.com/user-attachments/assets/68ebfcc9-8c67-4e89-8317-221e05fb41d5">](https://www.loom.com/share/b4f1c76f3d6449769273fe8b9e26f536?sid=83b632da-6850-4deb-a3dd-37de556f57a9)
 
 ## Contribution
 Contributions are welcome! To contribute:
