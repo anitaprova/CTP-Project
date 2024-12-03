@@ -65,8 +65,8 @@ def compute_perceptual(y_true, y_pred):
 
 
 def compute_gradients(y_true, y_pred):
-    dy_true, dx_true = tf.image.image_gradients(y_true)
-    dy_pred, dx_pred = tf.image.image_gradients(y_pred)
+    dy_true, dx_true = tf.image.image_gradients(y_true * 255)
+    dy_pred, dx_pred = tf.image.image_gradients(y_pred * 255)
 
     gradient_loss = tf.reduce_mean(
         tf.abs(dy_pred - dy_true) + tf.abs(dx_pred - dx_true), axis=-1
@@ -78,7 +78,7 @@ def combined_loss(y_true, y_pred):
     perceptual_loss = compute_perceptual(y_true, y_pred)
     gradient_loss = compute_gradients(y_true, y_pred)
 
-    total_loss = mse_loss + 0.2 * perceptual_loss + 0.2 * gradient_loss
+    total_loss = mse_loss + 0.1 * perceptual_loss + 0.1 * gradient_loss
     return total_loss
 
 def preprocess_image(image, target_size=(256, 256)):
@@ -93,7 +93,7 @@ unet_model = load_model(
 
 st.title("Art Restoration")
 
-uploaded_file = st.file_uploader("Choose a file", type=["jpeg", "jpg"])
+uploaded_file = st.file_uploader("Choose a file", type=["jpeg", "jpg", "png"])
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     input_image = preprocess_image(image)
