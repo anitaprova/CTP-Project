@@ -36,12 +36,14 @@ Run the main notebook to process your image datasets:
 3. Save and visualize results in the specified folder.
 
 ## Example
-### Input Image
-*![F (10270)_0](https://github.com/user-attachments/assets/462df3a2-c12b-4402-b54f-a29c75123749)*
+![605e11ad-59bb-4536-93d9-20ce5f885ed8](https://github.com/user-attachments/assets/7d98bf51-2387-4081-a302-8b1f15336b5e)
+![72f66ae7-cdad-4fbf-bd01-50191d742a3f](https://github.com/user-attachments/assets/1818c9f8-9399-43a2-8069-e6e1722946af)
+![c1744b99-3ed0-430c-9742-7ed23684d9d1](https://github.com/user-attachments/assets/557ce18a-9a03-47e8-80a9-6abe94afdb7c)
+![d87a4a94-7333-4776-b401-693be0e3d7dc](https://github.com/user-attachments/assets/ebbef0f4-721d-4607-a226-b2a199b91f8d)
+![f991b1d9-5175-4c28-9bb6-fdc9dcef2bd9](https://github.com/user-attachments/assets/dfb57283-1dca-4cce-bf75-2e744a81030f)
 
-
-### Output Image
-*![F (10270)](https://github.com/user-attachments/assets/1ffbacb5-7878-44b0-87fd-a1a708be4817)*
+## Demo
+[<img width="930" alt="Screen Shot 2024-11-30 at 7 50 43 PM" src="https://github.com/user-attachments/assets/68ebfcc9-8c67-4e89-8317-221e05fb41d5">](https://www.loom.com/share/b4f1c76f3d6449769273fe8b9e26f536?sid=83b632da-6850-4deb-a3dd-37de556f57a9)
 
 ## Contribution
 Contributions are welcome! To contribute:
