@@ -84,17 +84,24 @@ def combined_loss(y_true, y_pred):
     return total_loss
 
 def preprocess_image(image, target_size=(256, 256)):
+    original_size = image.size
+
+    image = image.convert("RGB")
     image = image.resize(target_size)
     image = np.array(image) / 255.0
-    return image
+    return image, original_size
 
 unet_model = load_model(
     "model/unet_model.keras",
     custom_objects={"combined_loss": combined_loss, "Model": build_unet_model},
 )
 
-# App title
-st.title("Art Restoration")
+# Styling 
+st.set_page_config(page_icon="🎨")
+st.title("🎨 Art Restoration")
+with open('app.css') as f:
+    css = f.read()
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 # Sidebar for sample images
 st.sidebar.title("Options")
@@ -102,34 +109,32 @@ sample_dir = "sample_images"
 sample_images = [f for f in os.listdir(sample_dir) if f.endswith(("jpeg", "jpg", "png"))]
 selected_sample = st.sidebar.selectbox("Choose a sample image:", ["None"] + sample_images)
 
-# File uploader
-uploaded_file = st.file_uploader("Upload an image", type=["jpeg", "jpg", "png"])
-
-# Load selected sample or uploaded image
+# Selecting Uploaded or Sample Image
+uploaded_file = st.file_uploader("", type=["jpeg", "jpg", "png"])
 if selected_sample != "None":
-    # Load the sample image
     image_path = os.path.join(sample_dir, selected_sample)
     image = Image.open(image_path)
-    st.sidebar.image(image, caption="Sample Image", use_container_width=True)
+    input_image, original_size = preprocess_image(image)
 elif uploaded_file:
-    # Load the uploaded image
     image = Image.open(uploaded_file)
+    input_image, original_size = preprocess_image(image)
 else:
     image = None
 
+# Running the model on image
 if image:
-    input_image = preprocess_image(image)
-    input_image = tf.expand_dims(input_image, axis=0)  # Add batch dimension
+    input_image = tf.expand_dims(input_image, axis=0)
 
-    # Predict the restored image
     predicted_image = unet_model.predict(input_image)
     predicted_image = tf.squeeze(predicted_image, axis=0)
     predicted_image = predicted_image.numpy()
 
-    # Normalize predicted_image to [0.0, 1.0] for display
+    # Normalize predicted image to [0.0, 1.0] for display
     predicted_image = np.clip(predicted_image, 0.0, 1.0)
 
-    # Display images side by side
+    predicted_image = Image.fromarray((predicted_image * 255).astype(np.uint8))
+    predicted_image = predicted_image.resize(original_size)
+
     col1, col2 = st.columns(2)
     with col1:
         st.image(image, caption="Input Image", use_container_width=True)
@@ -137,4 +142,3 @@ if image:
         st.image(predicted_image, caption="Restored Image", use_container_width=True)
 else:
     st.write("Please upload an image or select a sample from the sidebar.")
-
