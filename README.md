@@ -43,7 +43,7 @@ Run the main notebook to process your image datasets:
 
 
 ## Demo
-[<img width="930" alt="Screen Shot 2024-11-30 at 7 50 43 PM" src="https://github.com/user-attachments/assets/68ebfcc9-8c67-4e89-8317-221e05fb41d5">](https://www.loom.com/share/b4f1c76f3d6449769273fe8b9e26f536?sid=83b632da-6850-4deb-a3dd-37de556f57a9)
+[<img width="824" alt="Screen Shot 2024-12-09 at 6 21 27 PM" src="https://github.com/user-attachments/assets/8098fe6d-083e-46c9-a16b-6d08c652d6a0">](https://www.loom.com/share/a9db5a3e13974aff94b61496effec3a9?sid=52849bea-faf7-4e8c-864d-57a5d11fa81a)
 
 ## Application Graphical User Interface<
 [<img width="1431" alt="Screen Shot 2024-12-09 at 2 26 13 PM" src="https://github.com/user-attachments/assets/a2a31851-6e39-4b69-bb18-ccfcf401bfee">](https://artrestoration.streamlit.app/)
