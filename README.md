@@ -34,11 +34,13 @@ Run the main notebook to process your image datasets:
 3. Save and visualize results in the specified folder.
 
 ## Example
-![605e11ad-59bb-4536-93d9-20ce5f885ed8](https://github.com/user-attachments/assets/7d98bf51-2387-4081-a302-8b1f15336b5e)
-![72f66ae7-cdad-4fbf-bd01-50191d742a3f](https://github.com/user-attachments/assets/1818c9f8-9399-43a2-8069-e6e1722946af)
-![c1744b99-3ed0-430c-9742-7ed23684d9d1](https://github.com/user-attachments/assets/557ce18a-9a03-47e8-80a9-6abe94afdb7c)
-![d87a4a94-7333-4776-b401-693be0e3d7dc](https://github.com/user-attachments/assets/ebbef0f4-721d-4607-a226-b2a199b91f8d)
-![f991b1d9-5175-4c28-9bb6-fdc9dcef2bd9](https://github.com/user-attachments/assets/dfb57283-1dca-4cce-bf75-2e744a81030f)
+![1082f8fe-889a-4045-9f34-e22ec2c4a17a](https://github.com/user-attachments/assets/d1c29517-8fde-4c69-b476-7d593c7f4f9c)
+![8ab65b0a-237f-4664-b634-9cb55e47afe5](https://github.com/user-attachments/assets/654254eb-8bae-4639-a531-fc2c5d11b589)
+![b99e0ba0-560d-4d5d-a206-b8e3d616873b](https://github.com/user-attachments/assets/239dd066-691b-436b-9143-d6f26426415a)
+![accb0657-df2f-4bae-9745-bb48c445d112](https://github.com/user-attachments/assets/c445f0f8-233e-4d51-a6a9-9b5547b31c8e)
+![d123366a-73ad-4e95-a082-f2a08d7836bd](https://github.com/user-attachments/assets/febd9def-09c8-47ef-b8cd-9f9832704d4c)
+![c27b6961-b1c8-474c-b139-fbdc72ae5082](https://github.com/user-attachments/assets/7e7e8997-b2db-4246-8062-e8ee34c250dd)
+
 
 ## Demo
 [<img width="930" alt="Screen Shot 2024-11-30 at 7 50 43 PM" src="https://github.com/user-attachments/assets/68ebfcc9-8c67-4e89-8317-221e05fb41d5">](https://www.loom.com/share/b4f1c76f3d6449769273fe8b9e26f536?sid=83b632da-6850-4deb-a3dd-37de556f57a9)
